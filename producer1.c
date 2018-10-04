@@ -37,9 +37,10 @@ void main()
 
   int i;
   char buffer;
-  fscanf(fp,"%c",&buffer);
-  int n = (int)buffer;
-
+  int n;
+  fscanf(fp,"%d",&n);
+  //int n = (int)buffer;
+  printf("\n Value of n: %d. \n", n);
   for(i = 0; i < n; i++)
     {
       fscanf(fp,"%c",&str[i]);

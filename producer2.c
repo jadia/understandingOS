@@ -12,11 +12,11 @@ between producer and consumer processes.
 //#include <sys/ipc.h>
 
 #define MAX_BUFFER 1024
-#define INPUTFILE "producerInput.txt"
+#define INPUTFILE "producerInput2.txt"
 void main()
 {
   //ftok creates a code depending upon actual file and the number you provide.
-  key_t key = ftok(INPUTFILE, 420);
+  key_t key = ftok("producerInput.txt", 420);
 
   //create shared memory, if already there give 0666 permission.
   int shmid = shmget(key, MAX_BUFFER, 0666 | IPC_CREAT);
@@ -37,8 +37,8 @@ void main()
 
   int i;
   char buffer;
-  fscanf(fp,"%c",&buffer);
-  int n = (int)buffer;
+  int n;
+  fscanf(fp,"%d",&n);
 
   for(i = 0; i < n; i++)
     {

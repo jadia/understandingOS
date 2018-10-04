@@ -18,13 +18,15 @@ void main()
 	printf("Data read from the memory: ");
 
 	int i=0;
-/*
+
 	while(str[i])
 	{
 		printf("%c ", str[i]);
 		i++;
 	}
-*/
+
+
+/*
 	FILE *fp;
 	if((fp = fopen(OUTPUTFILE,"w")) == NULL)
 	{
@@ -38,5 +40,5 @@ void main()
 		fprintf(fp,"%c ",str[i]);
 		i++;
 	}
-
+*/
 }
