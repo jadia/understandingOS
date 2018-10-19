@@ -9,9 +9,10 @@ Read output of external program using pipes
 void main()
 {
   FILE *read_fp;
-  char buffer[BUFSIZ + 1];
+  char *buffer = calloc(BUFSIZ+1, sizeof(char));
+  //char buffer[BUFSIZ + 1];
   int chars_read;
-  memset(buffer, '\0', sizeof(buffer));
+  //memset(buffer, '\0', sizeof(buffer));
   read_fp = popen("uname -a", "r");
 
   if(read_fp != NULL)
